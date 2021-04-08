@@ -90,7 +90,7 @@ function validateForm() {
     // }          
     // if(name.length<1 || email.length<1 || phone.length<1 || message.length<1){
     if (firstname.length < 1 || lastname.length < 1 || email.length < 1 || confirmemail.length < 1 || phone.length < 1 || zipcode.length < 1 || validation1 == false || validation2 == false) {
-        document.getElementById("alertMsg").style.backgroundColor="red";
+        document.getElementById("alertMsg").style.backgroundColor="#585858";
         document.getElementById("alertMsg").style.visibility="visible";
         return false;
     }else {
