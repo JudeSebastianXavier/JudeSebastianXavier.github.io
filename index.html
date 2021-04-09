@@ -117,6 +117,22 @@
     </div>
 </body>
 <script>
+document.getElementById("my_captcha_form").addEventListener("submit", function (evt) {
 
+var response = grecaptcha.getResponse();
+if (response.length == 0) {
+    document.getElementById("modalheader").innerHTML = "Success";
+    document.getElementById("captchatext").innerHTML = "Please verify that you are a human"
+    document.getElementById('id01').style.display = 'block'
+    evt.preventDefault();
+    
+} else {
+    document.getElementById("modalheader").innerHTML = "Success";
+    document.getElementById("modaltext").innerHTML = "Registerd successfully"
+    document.getElementById("captchatext").innerHTML = ""
+    document.getElementById('id01').style.display = 'block'
+}
+return false;
+});
 </script>
 </html>
