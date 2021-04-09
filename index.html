@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="./assets/scripts/script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -23,74 +24,76 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h3 class="register-heading">Account Information</h3>
-                        <form name="myForm"  onsubmit="return validateForm()">
+                        <form name="myForm" onsubmit="return validateForm()">
                             <div class="row register-form">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input onkeyup="validationFirstname()" name="first-name" type="text"
                                             class="form-control" placeholder="First Name *" value="" />
-                                        <span id="error-firstname" style="color: red;font-size: 10px;"></span>
+                                        <span id="error-firstname" class="spanstyl"></span>
                                     </div>
                                     <div class="form-group">
                                         <input onkeyup="validationLastname()" name="last-name" type="text"
                                             class="form-control" placeholder="Last Name *" value="" />
-                                        <span id="error-lastname" style="color: red;font-size: 10px;"></span>
+                                        <span id="error-lastname" class="spanstyl"></span>
                                     </div>
                                     <div class="form-group">
                                         <input onkeyup="validatepassword('clicked')" onfocusout="passwordfocus()"
                                             onfocusin="validatepassword('clicked')" name="main-password" type="password"
                                             class="form-control" placeholder="Password *" value="" />
-                                        <p id="error-mainpassword1" style="color: red;font-size: 10px;"></p>
-                                        <p id="error-mainpassword2" style="color: red;font-size: 10px;"></p>
-                                        <p id="error-mainpassword3" style="color: red;font-size: 10px;"></p>
+                                        <p id="error-mainpassword1" class="passval"></p>
+                                        <p id="error-mainpassword2" class="passval"></p>
+                                        <p id="error-mainpassword3" class="passval"></p>
                                     </div>
                                     <div class="form-group">
                                         <input name="confirmpassword" onkeyup="confirmPassword()" type="password"
                                             class="form-control" placeholder="Confirm Password *" value="" />
-                                        <span id="error-confirmPassword" style="color: red;font-size: 10px;"></span>
+                                        <span id="error-confirmPassword" class="spanstyl"></span>
                                     </div>
                                     <div class="form-group">
-                                        <select name="slecltedstate" class="form-control required" onchange="validateState()">
+                                        <select name="slecltedstate" class="form-control required"
+                                            onchange="validateState()">
                                             <option class="hidden" value="" selected disabled>State </option>
                                             <option value="New York">New York</option>
                                             <option value="California">California</option>
                                         </select>
-                                        <span id="error-state" style="color: red;font-size: 10px;"></span>
+                                        <span id="error-state" class="spanstyl"></span>
                                     </div>
                                     <div class="form-group">
                                         <input onkeyup="validationCity()" name="city-name" type="text"
                                             class="form-control" placeholder="City *" value="" />
-                                        <span id="error-city" style="color: red;font-size: 10px;"></span>
+                                        <span id="error-city" class="spanstyl"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input onkeyup="validateEmail()" name="your-email" type="email"
                                             class="form-control" placeholder="Your Email *" value="" />
-                                        <span id="error-email" style="color: red;font-size: 10px;"></span>
+                                        <span id="error-email" class="spanstyl"></span>
                                     </div>
 
                                     <div class="form-group">
                                         <input onkeyup="confirmEmail()" name="confirm-email" type="email"
                                             class="form-control" placeholder="Confirm Email *" value="" />
-                                        <span id="error-confirm" style="color: red;font-size: 10px;"></span>
+                                        <span id="error-confirm" class="spanstyl"></span>
                                     </div>
                                     <div class="form-group">
                                         <input onkeyup="validationPhonenumber()" type="number" maxlength="10"
                                             name="your-phone" class="form-control" placeholder="Your Phone *"
                                             value="" />
-                                        <span id="error-phone" style="color: red;font-size: 10px;"></span>
+                                        <span id="error-phone" class="spanstyl"></span>
                                     </div>
                                     <div class="form-group">
                                         <input onkeyup="validationZipcode()" type="number" minlength="5" maxlength="7"
                                             name="zip-code" class="form-control" placeholder="Zip code *" value="" />
-                                        <span id="error-zipcode" style="color: red;font-size: 10px;"></span>
+                                        <span id="error-zipcode" class="spanstyl"></span>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Address (Optional)"
                                             value="" />
                                     </div>
-                                    <input type="submit" class="btnRegister" value="Submit" />
+                                    <div class="g-recaptcha" data-sitekey="6LcpH6MaAAAAACy7i4NQKeJROfShIpLEwlUmqPLS"></div>
+                                    <input type="submit" name="submit" class="btnRegister" value="Submit" />
                                 </div>
                             </div>
                         </form>
@@ -98,19 +101,20 @@
                 </div>
             </div>
         </div>
-            <div id="id01" class="w3-modal" style="padding-top: 300px;">
-                <div class="w3-modal-content w3-card-4" style="width: 400px;">
-                  <header class="w3-container w3-teal" style="background-color: #107598!important;"> 
-                    <span onclick="document.getElementById('id01').style.display='none'" 
-                    class="w3-button w3-display-topright">&times;</span>
+        <div id="id01" class="w3-modal" style="padding-top: 300px;">
+            <div class="w3-modal-content w3-card-4" style="width: 400px;">
+                <header class="w3-container w3-teal" style="background-color: #107598!important;">
+                    <span onclick="document.getElementById('id01').style.display='none'"
+                        class="w3-button w3-display-topright">&times;</span>
                     <h2 id="modalheader" style="font-size: 18px;"></h2>
-                  </header>
-                  <div class="w3-container">
+                </header>
+                <div class="w3-container">
                     <p id="modaltext" style="margin-top: 14px;"></p>
-                  </div>
                 </div>
             </div>
+        </div>
     </div>
+
 </body>
 
 </html>

@@ -124,3 +124,12 @@ input[type=number] {
   .closebtn:hover {
     color: black;
   }
+  .passval {
+    color: red;
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+  .spanstyl {
+    color: red;
+    font-size: 10px;
+  }

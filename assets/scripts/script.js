@@ -38,19 +38,25 @@ function validatepassword(val) {
 
         if (mainpassword.length > 7) {
             document.getElementById("error-mainpassword1").style.color = "green";
+            document.getElementById("error-mainpassword1").innerHTML = "&#10003 8 Characters";
         }
         else {
             document.getElementById("error-mainpassword1").style.color = "red";
+            document.getElementById("error-mainpassword1").innerHTML = "8 Characters";
         }
         if (format.test(mainpassword) == true) {
             document.getElementById("error-mainpassword2").style.color = "green";
+            document.getElementById("error-mainpassword2").innerHTML = "&#10003 1 Number";
         } else {
             document.getElementById("error-mainpassword2").style.color = "red";
+            document.getElementById("error-mainpassword2").innerHTML = "1 Number";
         }
         if (testletter.test(mainpassword) == true) {
             document.getElementById("error-mainpassword3").style.color = "green";
+            document.getElementById("error-mainpassword3").innerHTML = "&#10003 1 Letter";
         } else {
             document.getElementById("error-mainpassword3").style.color = "red";
+            document.getElementById("error-mainpassword3").innerHTML = "1 Letter";
         }
         if (mainpassword.length > 7 && format.test(mainpassword) == true && testletter.test(mainpassword) == true) {
             return true;
