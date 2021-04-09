@@ -28,61 +28,68 @@
                             <div class="row register-form">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="first-name" type="text" class="form-control"
-                                            placeholder="First Name *" value="" />
+                                        <input onkeydown="validationFirstname()" name="first-name" type="text"
+                                            class="form-control" placeholder="First Name *" value="" />
                                         <span id="error-firstname" style="color: red;font-size: 10px;"></span>
                                     </div>
                                     <div class="form-group">
-                                        <input name="last-name" type="text" class="form-control"
-                                            placeholder="Last Name *" value="" />
+                                        <input onkeydown="validationLastname()" name="last-name" type="text"
+                                            class="form-control" placeholder="Last Name *" value="" />
                                         <span id="error-lastname" style="color: red;font-size: 10px;"></span>
                                     </div>
                                     <div class="form-group">
-                                        <input onkeydown="validatepassword('clicked')" onfocusout="passwordfocus()" onfocusin="validatepassword('clicked')" name="main-password" type="password"
+                                        <input onkeydown="validatepassword('clicked')" onfocusout="passwordfocus()"
+                                            onfocusin="validatepassword('clicked')" name="main-password" type="password"
                                             class="form-control" placeholder="Password *" value="" />
                                         <p id="error-mainpassword1" style="color: red;font-size: 10px;"></p>
                                         <p id="error-mainpassword2" style="color: red;font-size: 10px;"></p>
                                         <p id="error-mainpassword3" style="color: red;font-size: 10px;"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input name="confirmpassword" onkeydown="confirmPassword()" type="password" class="form-control" placeholder="Confirm Password *"
-                                            value="" />
+                                        <input name="confirmpassword" onkeydown="confirmPassword()" type="password"
+                                            class="form-control" placeholder="Confirm Password *" value="" />
                                         <span id="error-confirmPassword" style="color: red;font-size: 10px;"></span>
-                                    </div> 
+                                    </div>
                                     <div class="form-group">
                                         <select class="form-control">
-                                            <option class="hidden" selected disabled>State</option>
+                                            <option class="hidden" selected disabled>State </option>
                                             <option value="">Select State</option>
                                             <option value="New York">New York</option>
                                             <option value="California">California</option>
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <input onkeydown="validationCity()" name="city-name" type="text"
+                                            class="form-control" placeholder="City *" value="" />
+                                        <span id="error-city" style="color: red;font-size: 10px;"></span>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input onkeydown="confirmEmail()" name="your-email" type="email" class="form-control"
-                                            placeholder="Your Email *" value="" />
+                                        <input onkeydown="validateEmail()" name="your-email" type="email"
+                                            class="form-control" placeholder="Your Email *" value="" />
                                         <span id="error-email" style="color: red;font-size: 10px;"></span>
                                     </div>
 
-                                    <!-- <div class="form-group">
-                                        <input name="confirm-email" type="email" class="form-control"
-                                            placeholder="Confirm Email *" value="" />
-                                        <span id="error-confirm" style="color: red;font-size: 10px;"></span>
-                                    </div> -->
                                     <div class="form-group">
-                                        <input type="number" maxlength="10" name="your-phone" class="form-control"
-                                            placeholder="Your Phone *" value="" />
+                                        <input onkeydown="confirmEmail()" name="confirm-email" type="email"
+                                            class="form-control" placeholder="Confirm Email *" value="" />
+                                        <span id="error-confirm" style="color: red;font-size: 10px;"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input onkeydown="validationPhonenumber()" type="number" maxlength="10"
+                                            name="your-phone" class="form-control" placeholder="Your Phone *"
+                                            value="" />
                                         <span id="error-phone" style="color: red;font-size: 10px;"></span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="number" minlength="5" maxlength="7" name="zip-code"
-                                            class="form-control" placeholder="Zip code *" value="" />
+                                        <input onkeydown="validationZipcode()" type="number" minlength="5" maxlength="7"
+                                            name="zip-code" class="form-control" placeholder="Zip code *" value="" />
                                         <span id="error-zipcode" style="color: red;font-size: 10px;"></span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control"
-                                            placeholder="Enter Your Address (Optional)" value="" />
+                                        <input type="text" class="form-control" placeholder="Address (Optional)"
+                                            value="" />
                                     </div>
                                     <input type="submit" class="btnRegister" value="Submit" />
                                 </div>
@@ -93,9 +100,9 @@
             </div>
         </div>
         <div class="alert" id="alertMsg" style="visibility:hidden">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-             Please fill all required fields.
-          </div>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            Please fill all required fields.
+        </div>
     </div>
 </body>
 
