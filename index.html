@@ -24,7 +24,7 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h3 class="register-heading">Account Information</h3>
-                        <form name="myForm" onsubmit="return validateForm()">
+                        <form id="my_captcha_form" name="myForm" onsubmit="return validateForm()">
                             <div class="row register-form">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -92,7 +92,7 @@
                                         <input type="text" class="form-control" placeholder="Address (Optional)"
                                             value="" />
                                     </div>
-                                    <div class="g-recaptcha" data-sitekey="6LcpH6MaAAAAACy7i4NQKeJROfShIpLEwlUmqPLS"></div>
+                                    <div id="my_captcha_form" class="g-recaptcha" data-sitekey="6LcpH6MaAAAAACy7i4NQKeJROfShIpLEwlUmqPLS"></div>
                                     <input type="submit" name="submit" class="btnRegister" value="Submit" />
                                 </div>
                             </div>
@@ -104,17 +104,19 @@
         <div id="id01" class="w3-modal" style="padding-top: 300px;">
             <div class="w3-modal-content w3-card-4" style="width: 400px;">
                 <header class="w3-container w3-teal" style="background-color: #107598!important;">
-                    <span onclick="document.getElementById('id01').style.display='none'"
+                    <span onclick="closeModal()"
                         class="w3-button w3-display-topright">&times;</span>
                     <h2 id="modalheader" style="font-size: 18px;"></h2>
                 </header>
                 <div class="w3-container">
                     <p id="modaltext" style="margin-top: 14px;"></p>
+                    <p id="captchatext" style="margin-top: 14px;"></p>
                 </div>
             </div>
         </div>
     </div>
-
 </body>
+<script>
 
+</script>
 </html>

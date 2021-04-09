@@ -15,13 +15,33 @@ function validateForm() {
     if (checkFirstname == false || checkLastname == false || checkEmail == false ||
         checkconfirmEmail == false || checkPhonenumber == false || checkZipcode == false ||
         checkpassword == false || checkconfirmPassword == false || checkCity == false || checkState == false) {
+            console.log("hgs==>")
         document.getElementById("modalheader").innerHTML = "Error";
         document.getElementById("modaltext").innerHTML = "Please fill all fields to register successfully"
         document.getElementById('id01').style.display = 'block'
     } else {
-        document.getElementById("modalheader").innerHTML = "Success";
+        console.log("hgaas==>")
+        document.getElementById("my_captcha_form").addEventListener("submit",function(evt)
+        {
+        
+        var response = grecaptcha.getResponse();
+        if(response.length == 0) 
+        { 
+          //reCaptcha not verified
+          document.getElementById("modalheader").innerHTML = "Success";
+              document.getElementById("captchatext").innerHTML = "Please verify that you are a human"
+              document.getElementById('id01').style.display = 'block'
+          evt.preventDefault();
+          return false;
+        }else {
+            document.getElementById("modalheader").innerHTML = "Success";
         document.getElementById("modaltext").innerHTML = "Registerd successfully"
         document.getElementById('id01').style.display = 'block'
+        }
+        //captcha verified
+        //do the rest of your validations here
+        
+      });
     }
     return false;
 
@@ -161,4 +181,9 @@ function validateState() {
         document.getElementById("error-state").innerHTML = "";
         return true;
     }
+}
+function closeModal() {
+    document.getElementById('id01').style.display='none';
+    document.getElementById("modalheader").innerHTML = "";
+    document.getElementById("modaltext").innerHTML = "";
 }
